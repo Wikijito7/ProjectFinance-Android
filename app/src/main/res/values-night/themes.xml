@@ -1,0 +1,68 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.ProjectFinance" parent="Theme.Material3.Dark.NoActionBar">
+        <item name="colorPrimary">@color/orange</item>
+        <item name="colorPrimaryVariant">@color/dark_orange</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorSecondary">@color/orange</item>
+        <item name="colorSecondaryVariant">@color/dark_orange</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <item name="colorTertiary">@color/nav_dark_theme</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="colorPrimaryContainer">?attr/colorPrimary</item>
+        <item name="colorError">@color/red</item>
+        <item name="colorOnError">@color/white</item>
+        <item name="colorErrorContainer">@color/md_theme_dark_errorContainer</item>
+        <item name="colorOnErrorContainer">@color/md_theme_dark_onErrorContainer</item>
+        <item name="colorOnBackground">@color/md_theme_dark_onBackground</item>
+        <item name="colorSurface">@color/md_theme_dark_surface</item>
+        <item name="colorOnSurface">@color/md_theme_dark_onSurface</item>
+        <item name="colorSecondaryContainer">@color/light_orange_25_alpha</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor">@color/black</item>
+        <!-- Customize your theme here. -->
+        <item name="snackbarStyle">@style/SnackBarBackgroundStyle</item>
+        <item name="snackbarButtonStyle">@style/SnackBarBtn</item>
+        <item name="snackbarTextViewStyle">@style/SnackBarText</item>
+        <item name="android:forceDarkAllowed" tools:targetApi="q">false</item>
+    </style>
+
+    <style name="SnackBarBackgroundStyle" parent="@style/Widget.Material3.Snackbar">
+        <item name="backgroundTint">@color/gray</item>
+    </style>
+
+    <style name="Toolbar" parent="Theme.ProjectFinance">
+        <item name="android:background">?android:attr/statusBarColor</item>
+        <item name="titleTextColor">@color/white</item>
+        <item name="titleTextAppearance">@style/Text.Bold.Title</item>
+    </style>
+
+    <style name="Drawable" parent="Theme.ProjectFinance">
+        <item name="drawableTint">@color/white</item>
+        <item name="android:tint">@color/white</item>
+    </style>
+
+    <style name="InvoiceBackground" parent="Theme.ProjectFinance">
+        <item name="android:background">@color/black</item>
+    </style>
+
+    <style name="SnackBarBtn" parent="@style/Widget.Material3.Button.TextButton.Snackbar">
+        <item name="android:textColor">?attr/colorPrimary</item>
+    </style>
+
+    <style name="SnackBarText" parent="@style/Widget.Material3.Snackbar.TextView">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="Text" parent="Theme.ProjectFinance">
+        <item name="android:textColor">@color/white</item>
+        <item name="drawableTint">@color/white</item>
+    </style>
+
+    <style name="DialogStyle">
+        <item name="android:background">@drawable/bg_bottom_sheet</item>
+        <item name="android:backgroundTint">@color/gray</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowSoftInputMode">adjustResize</item>
+    </style>
+</resources>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/row_dashboard__guideline__reactions"
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_height="1dp"
+        app:layout_constraintGuide_percent=".6" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/row_dashboard__list__invoices"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:visibility="gone"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:listitem="@layout/row_dashboard_invoice"
+        tools:visibility="visible" />
+
+    <TextView
+        android:id="@+id/row_dashboard__label__no_content"
+        style="@style/Text.Bold.Body1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/row_dashboard__no_content"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.vanniktech.emoji.EmojiEditText
+        android:id="@+id/row_dashboard__input__emoji"
+        android:layout_width="1dp"
+        android:layout_height="0dp"
+        android:imeOptions="actionSend"
+        android:inputType="textCapSentences|textMultiLine"
+        android:maxLines="3"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <com.vanniktech.emoji.EmojiView
+        android:id="@+id/row_dashboard__view__emoji_selector"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@id/row_dashboard__guideline__reactions"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

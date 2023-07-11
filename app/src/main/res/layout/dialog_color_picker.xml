@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingBottom="16dp">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/color_picker__label__title"
+            style="@style/Text.Bold.Body1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="48dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="8dp"
+            android:gravity="center"
+            android:text="@string/color_picker__title"
+            app:layout_constraintEnd_toStartOf="@id/color_picker__btn__close"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/color_picker__btn__close"
+            style="@style/Drawable"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:contentDescription="@string/general__close_desc"
+            android:src="@drawable/ic_close"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.skydoves.colorpickerview.ColorPickerView
+            android:id="@+id/color_picker__view__picker"
+            android:layout_width="0dp"
+            android:layout_height="300dp"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginVertical="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/color_picker__label__title" />
+
+        <LinearLayout
+            android:id="@+id/color_picker__container__alpha_slide_bar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/color_picker__view__picker">
+
+            <com.skydoves.colorpickerview.sliders.AlphaSlideBar
+                android:id="@+id/color_picker__view__alpha_slide_bar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                app:borderSize_AlphaSlideBar="5"
+
+                app:selector_AlphaSlideBar="@drawable/wheel" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/color_picker__container__brightness_slide_bar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/color_picker__container__alpha_slide_bar">
+
+            <com.skydoves.colorpickerview.sliders.BrightnessSlideBar
+                android:id="@+id/color_picker__view__brightness_slide_bar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                app:borderSize_BrightnessSlider="5"
+                app:selector_BrightnessSlider="@drawable/wheel" />
+        </LinearLayout>
+
+        <View
+            android:id="@+id/color_picker__view__color_preview"
+            android:layout_width="0dp"
+            android:layout_height="24dp"
+            android:layout_margin="16dp"
+            android:layout_marginTop="12dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/color_picker__container__brightness_slide_bar" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/color_picker__btn__accept"
+            style="@style/Button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:enabled="false"
+            android:text="@string/color_picker__accept"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/color_picker__view__color_preview" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>

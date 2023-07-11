@@ -1,0 +1,385 @@
+<resources>
+    <string name="app_name" translatable="false">Project Finance</string>
+    <string name="admob__banner_id" translatable="false">ca-app-pub-here</string>
+    <string name="admob__native_id" translatable="false">ca-app-pub-here</string>
+    <string name="web_client_id" translatable="false">web-client-id-here</string>
+
+    <!-- region general -->
+    <string name="general__close_desc">Close dialog</string>
+    <string name="general__back_desc">Go back</string>
+    <string name="general__revert">Revert</string>
+    <string name="general__help_desc">Help</string>
+    <string name="general__retry">Retry</string>
+    <string name="general__error">Error</string>
+    <string name="general__cancel">Cancel</string>
+    <string name="general__accept">Accept</string>
+    <string name="general__worker_channel_name">Worker\'s notification</string>
+    <string name="general__worker_channel_description">Notifications for foreground services</string>
+    <string name="general__server_error">There\'s been an error while communicating with server. Try again.</string>
+    <!-- endregion -->
+
+    <!-- region title -->
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Summary</string>
+    <string name="title_calendar">Calendar</string>
+    <string name="title_filter">Filter</string>
+    <string name="title_profile">Profile</string>
+    <string name="title_config">Config</string>
+    <!-- endregion -->
+
+    <!-- region splash -->
+    <string name="splash__screen_name" translatable="false">Splash</string>
+    <string name="splash__version" translatable="false">V. %1$s</string>
+    <!-- endregion -->
+
+    <!-- region home -->
+    <string name="home__total_saved_up">Saved up</string>
+    <string name="home__total_deposit">Income</string>
+    <string name="home__total_expensed">Expenses</string>
+    <string name="home__summary">Summary</string>
+    <string name="home__last_movements">Last movements</string>
+    <string name="home__show_more">Show more</string>
+    <string name="home__no_movements">There are no movements yet…</string>
+    <string name="home__expense_category_pie_chart">Top of expenses</string>
+    <string name="home__deposit_category_pie_chart">Top of deposits</string>
+    <string name="home__historical_savings">Savings historical</string>
+    <string name="popup_home__title">There\'s more content when scrolling!</string>
+    <!-- endregion -->
+
+    <!-- region add invoice -->
+    <string name="add_new_invoice">Add new invoice</string>
+    <string name="add_new_expense">Add new expense</string>
+    <string name="add_new_deposit">Add new deposit</string>
+    <string name="edit_expense">Edit expense</string>
+    <string name="edit_deposit">Edit deposit</string>
+    <string name="add_invoice__invoice_title">Title*</string>
+    <string name="add_invoice__invoice_description">Description</string>
+    <string name="add_invoice__date">Date*</string>
+    <string name="add_invoice__invoice_amount">Invoice amount*</string>
+    <string name="add_invoice__title_empty_error">Title cannot be empty</string>
+    <string name="add_invoice__amount_equal_zero_error">Invoice amount cannot be equal to zero</string>
+    <string name="add_invoice__amount_too_many_characters_error">Invoice amount cannot be that high</string>
+    <string name="add_invoice__date_empty_error">Date cannot be empty</string>
+    <string name="add_invoice__edit_invoice_title">Edit invoice</string>
+    <string name="add_invoice__category">Category</string>
+    <string name="add_invoice__accept">Add invoice</string>
+    <string name="add_invoice__type">Invoice type*</string>
+    <string name="add_invoice__expense">Expense</string>
+    <string name="add_invoice__deposit">Deposit</string>
+    <string name="add_invoice__sync">Cloud synchronization*</string>
+    <string name="add_invoice__sync_on">Synchronize</string>
+    <string name="add_invoice__sync_off">Don\'t synchronize</string>
+    <!-- endregion -->
+
+    <!-- region detail -->
+    <string name="detail__more_desc">Show options</string>
+    <string name="detail__invoice_title">Title</string>
+    <string name="detail__invoice_description_title">Description</string>
+    <string name="detail__invoice_date_title">Date</string>
+    <string name="detail__main_title">Invoice detail</string>
+    <string name="detail__invoice_category_title">Category</string>
+    <string name="detail__sync_title">Synchronization state</string>
+    <string name="detail__sync_on">Synchronized</string>
+    <string name="detail__sync_off">Not synchronized</string>
+    <string name="detail__sync_never">Never synchronize</string>
+    <!-- endregion -->
+
+    <!-- region dashboard -->
+    <string name="row_dashboard__no_content">There aren\'t any invoices in here… :(</string>
+    <string name="dashboard__all_invoices_tab">All</string>
+    <string name="dashboard__deposits_tab">Deposits</string>
+    <string name="dashboard__expenses_tab">Expenses</string>
+    <string name="dashboard__add_invoice_desc">Add invoice</string>
+    <string name="dashboard__screen_name">This month\'s Summary</string>
+    <string name="dashboard__filter">Filter</string>
+    <string name="dashboard_tutorial__accept">Accept</string>
+    <string name="dashboard_tutorial__next">Next</string>
+    <string name="dashboard_tutorial__title">Summary tutorial</string>
+    <string name="dashboard_tutorial__tutorial">Now you can edit and delete invoices by swiping on it! Just swipe left to edit it or swipe right to delete it. It\'s that simple!</string>
+    <string name="dashboard_tutorial__reaction_tutorial">Now you can add reactions by long pressing it! Just long press and select whichever reaction. You can add up to 8 reactions. It\'s that simple!</string>
+    <string name="dashboard__sync_now">Sync now</string>
+    <string name="dashboard__synchronizing">Synchronizing invoices</string>
+    <string name="row_ad__loading_ad">Loading ad</string>
+    <!-- endregion -->
+
+    <!-- region detail options -->
+    <string name="detail_options__main_title">Detail options</string>
+    <string name="detail_options__edit_invoice">Edit invoice</string>
+    <string name="detail_options__add_reaction">Add reaction</string>
+    <string name="detail_options__remove_invoice">Remove invoice</string>
+    <!-- endregion -->
+
+    <!-- region info -->
+    <string name="info__invoice_removed">Invoice removed successfully</string>
+    <!-- endregion -->
+
+    <!-- region add category -->
+    <string name="add_category__title">Add category</string>
+    <string name="add_category__accept">Add category</string>
+    <string name="add_category__category_deleted">Category deleted</string>
+    <!-- endregion -->
+
+    <!-- region create category -->
+    <string name="create_category__color">Color*</string>
+    <string name="create_category__category_name">Name*</string>
+    <string name="create_category__title">Create category</string>
+    <string name="create_category__edit_category">Edit category</string>
+    <string name="create_category__accept_edit_category">Edit category</string>
+    <string name="create_category__accept">Create category</string>
+    <string name="category__none">No category</string>
+    <!-- endregion -->
+
+    <!-- region color picker -->
+    <string name="color_picker__title">Pick a color</string>
+    <string name="color_picker__accept">Add color</string>
+    <!-- endregion -->
+
+    <!-- region floating btn -->
+    <string name="floating_button__add_deposit">Add deposit</string>
+    <string name="floating_button__add_expense">Add expense</string>
+    <!-- endregion -->
+
+    <!-- region edit invoice type -->
+    <string name="edit_invoice_type__accept">Edit invoice type</string>
+    <string name="edit_invoice_type__main_title">Edit invoice type</string>
+    <string name="edit_invoice_type__deposit">Deposit</string>
+    <string name="edit_invoice_type__expense">Expense</string>
+    <!-- endregion -->
+
+    <!-- region select filter -->
+    <string name="select_filter__main_title">Filters</string>
+    <string name="select_filter__date">Date</string>
+    <string name="select_filter__category">Category</string>
+    <string name="select_filter__accept">Filter</string>
+    <string name="select_filter__delete_desc">Delete filter</string>
+    <string name="filter_date__accept">Select dates</string>
+    <string name="filter_date__to">To</string>
+    <string name="filter_date__from">From*</string>
+    <string name="filter_date__title">Filter by date</string>
+    <string name="filter_category__title">Filter by categories</string>
+    <string name="filter_category__accept">Select categories</string>
+    <string name="filter__date_from_to">Invoices from %1$s to %2$s</string>
+    <string name="filter__date_from">Invoices on %1$s</string>
+    <string name="filter__categories_selected">Categories selected: %1$s</string>
+    <!-- endregion -->
+
+    <!-- region filter -->
+    <string name="filter__total_deposit">Income</string>
+    <string name="filter__total_expensed">Expenses</string>
+    <string name="row_filter__no_content">It\'s a little bit quiet in here…</string>
+    <!-- endregion -->
+
+    <!-- region login -->
+    <string name="login__sign_in">Sign in</string>
+    <string name="login__sign_up">Sign up</string>
+    <string name="login__email">Email</string>
+    <string name="login__password">Password</string>
+    <string name="login__show_pass_desc">Show password</string>
+    <string name="login__title_sign_in">Sign in to Project Finance.</string>
+    <string name="login__title_sign_up">Hello There! Welcome to Project Finance.</string>
+    <string name="login__sign_in_with_google">Sign in with Google</string>
+    <string name="login__or">Or</string>
+    <string name="login__forgot_pass">Forgot your password?</string>
+    <string name="login__account_sign_up">Don\'t have an account? Sign up</string>
+    <string name="login__username">Username</string>
+    <string name="login__continue_without_login">Continue without login</string>
+    <string name="login__error_with_google">There\'s been an error trying to login with Google</string>
+    <string name="login__username_or_email">Email or Username</string>
+    <string name="login__account_sign_in">Have an account? Sign in</string>
+    <string name="login__loading_sign_in">Signing in…</string>
+    <string name="login__loading_sign_up">Signing up…</string>
+    <string name="login__error_invalid_email">This email is not valid</string>
+    <string name="login__error_invalid_username">Username must contain at least 3 characters</string>
+    <string name="login__error_invalid_password">Password must contain at least 8 characters</string>
+    <string name="login__sign_out_successfully">Sign out successfully</string>
+    <string name="login__error_while_login">An error has happened while signing in</string>
+    <string name="login__error_wrong_username_or_password">Wrong username or password</string>
+    <string name="login__error_email_or_username_exists">Email or username already exists</string>
+    <!-- endregion -->
+
+    <!-- region profile -->
+    <string name="profile__img_desc">User\'s profile picture</string>
+    <string name="profile__edit_profile">Edit profile</string>
+    <string name="profile__contacts">Contacts</string>
+    <string name="profile__sign_out">Sign out</string>
+    <string name="profile__settings">Settings</string>
+    <string name="profile__number_of_invoices">%1$d invoices created</string>
+    <string name="profile__joined_on">Joined on %1$s</string>
+    <string name="profile__getting_user_data">Loading user information…</string>
+    <string name="profile__not_verified_error">Your account is not verified. You will not be able to use the account until it is verified. More info.</string>
+    <!-- endregion -->
+
+    <!-- region sync -->
+    <string name="cloud_sync_type__main_title">Cloud synchronization</string>
+    <string name="cloud_sync_type__accept">Accept</string>
+    <string name="cloud_sync__worker_title">Synchronizing invoices</string>
+    <string name="cloud_sync__worker_description">Synchronizing invoices to the cloud</string>
+    <string name="cloud_sync_type__synchronize">Synchronize</string>
+    <string name="cloud_sync_type__dont_synchronize">Don\'t synchronize</string>
+    <!-- endregion -->
+
+    <!-- region notifications -->
+    <string name="notifications__notifications_disabled">Notifications are disabled</string>
+    <string name="notifications__notifications_title">Notifications!</string>
+    <string name="notifications__notifications_description">Project Finance will notify you when new notifications come in, such as when we are synchronizing your invoices!</string>
+    <string name="notifications__notify_me">Notify me!</string>
+    <string name="notifications__skip">Skip</string>
+    <string name="notifications__activate_notifications">Activate</string>
+    <!-- endregion -->
+
+    <!-- region reaction detail -->
+    <string name="reaction_detail__delete_reaction">Delete reaction</string>
+    <string name="reaction_detail__main_title">Reactions</string>
+    <string name="reaction_detail__reaction_removed">Reaction removed successfully</string>
+    <!-- endregion -->
+
+    <!-- region edit profile -->
+    <string name="edit_profile__edit_picture">Edit profile picture</string>
+    <string name="edit_profile__updating_profile_picture">Uploading image</string>
+    <string name="edit_profile__upload_image_error">An error has happened while trying to upload the image</string>
+    <string name="edit_profile__save">Save</string>
+    <string name="edit_profile__go_back">Go back</string>
+    <string name="edit_profile__change_pass">Change password</string>
+    <string name="edit_profile__change_pass_desc">Tap here to change current password. You will need to log back in after changing the password.</string>
+    <!-- endregion -->
+
+    <!-- region crop image -->
+    <string name="crop_image__rotate_image_desc">Rotate image 90 degrees</string>
+    <string name="crop_image__apply_crop_desc">Apply crop</string>
+    <string name="edit_profile__updating_user">Updating user</string>
+    <string name="edit_profile__update_user_error">There\'s been an error updating user</string>
+    <!-- endregion -->
+
+    <!-- region biometrics -->
+    <string name="biometrics__fingerprint_desc">Show fingerprint dialog</string>
+    <string name="biometrics__tap_here">Tap here to access with your fingerprint</string>
+    <string name="biometrics__login">Enter Project Finance</string>
+    <string name="biometrics__subtitle">Enter Project Finance using biometrics</string>
+    <string name="biometrics__welcome">Welcome Back to Project Finance!</string>
+    <!-- endregion -->
+
+    <!-- region config -->
+    <string name="config__security">Security</string>
+    <string name="config__permissions">Permissions</string>
+    <string name="config__theme">Theme</string>
+    <string name="config__biometrics_title">Biometrics security</string>
+    <string name="config__biometrics_desc">Use your biometrics to enter the app. It will be asked once when the app is opened.</string>
+    <string name="config__otp_title">Two Factor Authentication</string>
+    <string name="config__otp_desc">It will be asked on some important actions, such as login or when changing profile info.</string>
+    <string name="config__secure_mode_title">Secure mode</string>
+    <string name="config__secure_mode_desc">Will not be able to take screenshots of the app and it will be blurred in background.</string>
+    <string name="config__notifications_title">Notifications</string>
+    <string name="config__notifications_desc">Notifications will be sent when synchronizing or when new invoices are received.</string>
+    <string name="config__theme_title">Theme selected</string>
+    <string name="config__system_default">System default</string>
+    <string name="config__close_all_sessions">Close all sessions</string>
+    <string name="config__close_all_sessions_desc">By clicking here, you will close all sessions, including this one. Once closed, you will need to sign in again.</string>
+    <string name="config__biometrics_disabled">Biometrics are now disabled</string>
+    <string name="config__biometrics_enabled">Biometrics are now enabled</string>
+    <string name="config__light_mode">Light mode</string>
+    <string name="config__dark_mode">Dark mode</string>
+    <string name="config__biometrics">Biometrics</string>
+    <string name="config__biometrics_confirm">Confirm using your fingerprint</string>
+    <string name="config__closing_sessions">Closing all sessions</string>
+    <string name="config__removing_totp">Removing 2FA</string>
+    <string name="config__error_removing_totp">There\'s been an error while removing 2FA. Try again.</string>
+    <string name="config__close_all_sessions_dialog_desc">Are you sure you want to close all sessions? You will need to log back in.</string>
+    <string name="config__remove_totp_desc">Are you sure you want to remove 2FA? You will need to log back in.</string>
+    <string name="config__remove_totp">Remove 2FA</string>
+    <!-- endregion -->
+
+    <!-- region theme selector -->
+    <string name="theme_selector__main_title">Select theme</string>
+    <string name="theme_selector__accept">Select theme</string>
+    <string name="theme_selector__dark_mode">Dark mode</string>
+    <string name="theme_selector__light_mode">Light mode</string>
+    <string name="theme_selector__system_default">System default</string>
+    <!-- endregion -->
+
+    <!-- region login help -->
+    <string name="login_help__main_title">Help</string>
+    <string name="login_help__why">Why is needed?</string>
+    <string name="login_help__data">What data is recollected?</string>
+    <string name="login_help__how">How do I sign up?</string>
+    <string name="login_help__why_desc">Authentication is required to unlock online content, such as cloud synchronization.</string>
+    <string name="login_help__without_auth_desc">Without authentication, you will be able to use the basic functionality of the app, but your data will not be backed up on the cloud, so it may be lost if the application is uninstalled or if you switch phones.</string>
+    <string name="login_help__data_desc">We only will ask for basic information, such as username, email and password. This information is stored on our server and will be use ONLY to identify you. This information will not be sold or use for other purpose.</string>
+    <string name="login_help__how_desc">In order to sign up, you\'ve got two options: via Google auth or signing in manually.</string>
+    <string name="login_help__how_google">Click on Sign in with Google and then click on the account you want to use for Project Finance. No more actions are required.</string>
+    <string name="login_help__how_manual">Click on the bottom text where it prompts you to sign in, write down a username, an email and a password and click on Sign In. Next, you need to verify your email by clicking on the link you will receive on your mail. After that, no more actions are required.</string>
+    <string name="login_help__terms">By using the app, you accept the Terms and Conditions of Project Finance.</string>
+    <string name="login_help__how_google_title">Via Google</string>
+    <string name="login_help__how_manual_title">Sign in manually</string>
+    <!-- endregion -->
+
+    <!-- region totp request -->
+    <string name="totp_request__title">2FA required</string>
+    <string name="totp_request__category_name">Authenticator code</string>
+    <string name="totp_request__accept">Accept</string>
+    <!-- endregion -->
+
+    <!-- region badges -->
+    <string name="badges__verified">Email Verified</string>
+    <string name="badges__error" translatable="false">3RR0R</string>
+    <string name="badges__legacy">OGs</string>
+    <string name="badges__beta">Beta Tester</string>
+    <string name="badges__error_desc">This badge should not be visible. This badge does not exists in this version.</string>
+    <string name="badges__verified_desc">This account is verified. The user has verified the email or used a Google account.</string>
+    <string name="badges__beta_desc">This user is a Beta tester. Beta testers helps build a better app. This badge is limited and can be customized.</string>
+    <string name="badges__legacy_desc">Users with this badge represents the original user base. They registered on the first month of version 1.2 release.</string>
+    <string name="badges__title">Badges</string>
+    <!-- endregion -->
+
+    <!-- region totp -->
+    <string name="totp__scan_qr_title">Scan this QR</string>
+    <string name="totp__2fa_code_qr">2FA code qr</string>
+    <string name="totp__open_2fa">Open on 2FA app</string>
+    <string name="totp__go_next">Go next</string>
+    <string name="totp__copy_code">Use this code on the app</string>
+    <string name="totp__requesting_totp">Setting up 2FA</string>
+    <string name="totp__error_setting_up">There\'s been an error setting up 2FA. Try again.</string>
+    <string name="totp__no_app_found">It seems there is no authenticator app installed…</string>
+    <string name="totp__text_copied">Text copied successfully</string>
+    <string name="totp__qr_label" translatable="false">2FA app code</string>
+    <string name="totp__words_label">Recovery words</string>
+    <string name="totp__finish">Finish</string>
+    <string name="totp__copy_words">Copy words</string>
+    <string name="totp__2fa_recover_words">2FA recover words</string>
+    <string name="totp__words_desc">This words are unique to this account and are used to recover 2FA in case you lose your app code generator. DO NOT show it to anybody and save it securely.</string>
+    <!-- endregion -->
+
+    <!-- region graph -->
+    <string name="graph__no_data">There is no data to show here…</string>
+    <!-- endregion -->
+
+    <!-- region change pass -->
+    <string name="change_pass__title">Change password</string>
+    <string name="change_pass__recover">Recover code</string>
+    <string name="change_pass__code">Check your email and paste the code on the email you have just received.</string>
+    <string name="change_pass__accept">Change password</string>
+    <string name="change_pass__old_password">Old password</string>
+    <string name="change_pass__new_password">New password</string>
+    <string name="change_pass__error_recover_code">Recover code cannot be empty</string>
+    <string name="change_pass__request_recover_pass">Requesting recover code</string>
+    <string name="change_pass__changing_pass">Changing password</string>
+    <string name="change_pass__error_requesting_recover">There\'s been an error requesting recover code. Try again later.</string>
+    <string name="change_pass__error_change_pass">There\'s been an error changing the password. Try again later.</string>
+    <string name="change_pass__changed_pass_success">Changed password successfully. Log back in.</string>
+    <string name="change_pass__request_code">Request code</string>
+    <string name="change_pass__wrong_pass">Wrong password</string>
+    <string name="change_pass__unknown_recover_code">Recover code does not exists. Check if it is correct.</string>
+    <!-- endregion -->
+
+    <!-- region verification -->
+    <string name="verification__title">Verify your email</string>
+    <string name="verification__desc">Verification is needed to be able to synchronize your invoices and to change your information. Also, you will get a badge when you verify your email successfully. You can verify your email by clicking on the link you\'ve received on the email we have just sent to your mail.</string>
+    <string name="verification__not_received">Haven\'t received it? Check your spam folder</string>
+    <string name="verification__resend">Resend verification mail</string>
+    <string name="verification__resend_in">You can resend your email back in %1$s</string>
+    <string name="verification__sent_success">Verification email has been resent successfully. Check your email.</string>
+    <string name="verification__request">Requesting email…</string>
+    <string name="verification__sent_error">There\'s been an error requesting verification email. Try again later.</string>
+    <string name="row_ad__ad_image_desc">Ad image</string>
+    <string name="row_ad__ad">Ad</string>
+    <!-- endregion -->
+</resources>

@@ -1,0 +1,380 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/splashFragment">
+
+    <!-- region global actions -->
+    <action
+        android:id="@+id/action__global__to_home"
+        app:destination="@id/homeFragment"
+        app:enterAnim="@anim/nav_default_enter_anim"
+        app:exitAnim="@anim/nav_default_exit_anim"
+        app:launchSingleTop="true"
+        app:popUpTo="@id/homeFragment"
+        app:popUpToInclusive="true" />
+
+    <action
+        android:id="@+id/action__global__to_dashboard"
+        app:destination="@id/dashboardFragment"
+        app:enterAnim="@anim/nav_default_enter_anim"
+        app:exitAnim="@anim/nav_default_exit_anim"
+        app:launchSingleTop="true" />
+
+    <action
+        android:id="@+id/action__global__to_add_invoice"
+        app:destination="@id/addInvoiceDialogFragment"
+        app:enterAnim="@anim/nav_default_enter_anim"
+        app:exitAnim="@anim/nav_default_exit_anim"
+        app:launchSingleTop="true">
+
+        <argument
+            android:name="invoiceId"
+            app:argType="long" />
+
+        <argument
+            android:name="invoiceType"
+            app:argType="string" />
+    </action>
+
+    <action
+        android:id="@+id/action__global__to_profile"
+        app:destination="@id/profileNavigation"
+        app:enterAnim="@anim/nav_default_enter_anim"
+        app:exitAnim="@anim/nav_default_exit_anim"
+        app:launchSingleTop="true" />
+
+    <action
+        android:id="@+id/action__global__to_notification_rationale"
+        app:destination="@id/notificationRationaleGraph"
+        app:enterAnim="@anim/nav_default_enter_anim"
+        app:exitAnim="@anim/nav_default_exit_anim"
+        app:launchSingleTop="true" />
+    <!-- endregion -->
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="es.wokis.projectfinance.ui.home.fragment.HomeFragment"
+        android:label="@string/title_home"
+        tools:layout="@layout/fragment_home">
+
+        <action
+            android:id="@+id/action__home__to__dashboard"
+            app:destination="@id/dashboardFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:launchSingleTop="true" />
+
+        <action
+            android:id="@+id/action__home__to__detail"
+            app:destination="@id/invoiceDetailDialogFragment" />
+
+        <action
+            android:id="@+id/action__home__to__graphs"
+            app:destination="@id/graphsFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/dashboardFragment"
+        android:name="es.wokis.projectfinance.ui.dashboard.fragment.DashboardFragment"
+        android:label="@string/title_dashboard"
+        tools:layout="@layout/fragment_dashboard">
+
+        <action
+            android:id="@+id/action__dashboard__to__add_invoice"
+            app:destination="@id/addInvoiceDialogFragment">
+
+            <argument
+                android:name="invoiceId"
+                app:argType="long" />
+
+            <argument
+                android:name="invoiceType"
+                app:argType="string" />
+        </action>
+
+        <action
+            android:id="@+id/action__dashboard__to__detail"
+            app:destination="@id/invoiceDetailDialogFragment" />
+
+        <action
+            android:id="@+id/action__dashboard__to__select_filter"
+            app:destination="@id/selectFilterDialogFragment" />
+
+        <action
+            android:id="@+id/action__dashboard__to__reaction_detail"
+            app:destination="@id/reactionDetailDialogFragment" />
+    </fragment>
+
+    <dialog
+        android:id="@+id/addInvoiceDialogFragment"
+        android:name="es.wokis.projectfinance.ui.addinvoice.fragment.AddInvoiceDialogFragment"
+        android:label="AddInvoiceDialogFragment"
+        tools:layout="@layout/dialog_add_invoice">
+
+        <argument
+            android:name="invoiceId"
+            android:defaultValue="0L"
+            app:argType="long" />
+
+        <argument
+            android:name="invoiceType"
+            android:defaultValue="GET_FROM_INVOICE"
+            app:argType="string" />
+
+        <action
+            android:id="@+id/action__add_invoice__to__date_picker"
+            app:destination="@id/datePickerFragment" />
+
+        <action
+            android:id="@+id/action__add_invoice__to__category"
+            app:destination="@id/categoryDialogFragment">
+
+            <argument
+                android:name="categoryId"
+                app:argType="long" />
+        </action>
+
+        <action
+            android:id="@+id/action__add_invoice__to__edit_invoice_type"
+            app:destination="@id/editInvoiceTypeDialogFragment" />
+
+        <action
+            android:id="@+id/action__add_invoice__to__cloud_synchronization"
+            app:destination="@id/cloudSynchronizationDialogFragment" />
+
+    </dialog>
+
+    <dialog
+        android:id="@+id/datePickerFragment"
+        android:name="es.wokis.projectfinance.ui.addinvoice.dialog.DatePickerFragment"
+        android:label="DatePickerFragment">
+
+        <argument
+            android:name="requestKey"
+            app:argType="string" />
+    </dialog>
+
+    <dialog
+        android:id="@+id/invoiceDetailDialogFragment"
+        android:name="es.wokis.projectfinance.ui.detail.fragment.InvoiceDetailDialogFragment"
+        android:label="InvoiceDetailDialogFragment"
+        tools:layout="@layout/dialog_invoice_detail">
+
+        <argument
+            android:name="invoiceId"
+            app:argType="long" />
+
+        <action
+            android:id="@+id/action__detail__to__detail_options"
+            app:destination="@id/detailOptionsDialogFragment" />
+
+        <action
+            android:id="@+id/action__detail__to__add_invoice"
+            app:destination="@id/addInvoiceDialogFragment">
+
+            <argument
+                android:name="invoiceId"
+                app:argType="long" />
+        </action>
+    </dialog>
+
+    <dialog
+        android:id="@+id/detailOptionsDialogFragment"
+        android:name="es.wokis.projectfinance.ui.detail.fragment.DetailOptionsDialogFragment"
+        android:label="DetailOptionsDialogFragment"
+        tools:layout="@layout/dialog_detail_options" />
+
+    <fragment
+        android:id="@+id/splashFragment"
+        android:name="es.wokis.projectfinance.ui.splash.fragment.SplashFragment"
+        android:label="SplashFragment"
+        tools:layout="@layout/fragment_splash">
+
+        <action
+            android:id="@+id/action__splash__to__home"
+            app:destination="@id/homeFragment"
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/fade_out"
+            app:launchSingleTop="true" />
+
+        <action
+            android:id="@+id/action__splash__to__biometrics"
+            app:destination="@id/biometricsFragment" />
+    </fragment>
+
+    <dialog
+        android:id="@+id/categoryDialogFragment"
+        android:name="es.wokis.projectfinance.ui.category.fragment.CategoryDialogFragment"
+        android:label="CategoryDialogFragment"
+        tools:layout="@layout/dialog_add_category">
+
+        <argument
+            android:name="categoryId"
+            android:defaultValue="0L"
+            app:argType="long" />
+
+        <action
+            android:id="@+id/action__category__to__create_category"
+            app:destination="@id/createCategoryDialogFragment" />
+    </dialog>
+
+    <dialog
+        android:id="@+id/createCategoryDialogFragment"
+        android:name="es.wokis.projectfinance.ui.category.fragment.CreateCategoryDialogFragment"
+        android:label="CreateCategoryDialogFragment"
+        tools:layout="@layout/dialog_create_category">
+
+        <argument
+            android:name="id"
+            app:argType="long" />
+
+        <action
+            android:id="@+id/action__create_category__to__color_picker"
+            app:destination="@id/colorPickerFragment" />
+    </dialog>
+
+    <dialog
+        android:id="@+id/colorPickerFragment"
+        android:name="es.wokis.projectfinance.ui.category.dialog.ColorPickerFragment"
+        android:label="ColorPickerFragment"
+        tools:layout="@layout/dialog_color_picker">
+
+        <argument
+            android:name="defaulColor"
+            app:argType="string" />
+    </dialog>
+
+    <dialog
+        android:id="@+id/editInvoiceTypeDialogFragment"
+        android:name="es.wokis.projectfinance.ui.addinvoice.dialog.EditInvoiceTypeDialogFragment"
+        android:label="EditInvoiceTypeDialogFragment"
+        tools:layout="@layout/dialog_edit_invoice_type">
+
+        <argument
+            android:name="invoiceType"
+            app:argType="string" />
+    </dialog>
+
+    <dialog
+        android:id="@+id/categoryFilterDialogFragment"
+        android:name="es.wokis.projectfinance.ui.filter.fragment.CategoryFilterDialogFragment"
+        android:label="CategoryFilterDialogFragment"
+        tools:layout="@layout/dialog_filter_category">
+
+        <argument
+            android:name="selectedIds"
+            app:argType="string" />
+
+    </dialog>
+
+    <dialog
+        android:id="@+id/dateFilterDialogFragment"
+        android:name="es.wokis.projectfinance.ui.filter.fragment.DateFilterDialogFragment"
+        android:label="DateFilterDialogFragment"
+        tools:layout="@layout/dialog_filter_date">
+
+        <argument
+            android:name="selectedDateFrom"
+            app:argType="string" />
+
+        <argument
+            android:name="selectedDateTo"
+            app:argType="string" />
+
+        <action
+            android:id="@+id/action__date_filter__to__date_picker"
+            app:destination="@id/datePickerFragment" />
+    </dialog>
+
+    <dialog
+        android:id="@+id/selectFilterDialogFragment"
+        android:name="es.wokis.projectfinance.ui.filter.fragment.SelectFilterDialogFragment"
+        android:label="FilterDialogFragment"
+        tools:layout="@layout/dialog_select_filter">
+
+        <action
+            android:id="@+id/action__select_filter__to__date_filter"
+            app:destination="@id/dateFilterDialogFragment" />
+
+        <action
+            android:id="@+id/action__select_filter__to__category_filter"
+            app:destination="@id/categoryFilterDialogFragment" />
+
+        <action
+            android:id="@+id/action__select_filter__to__filter"
+            app:destination="@id/filterFragment"
+            app:popUpTo="@id/dashboardFragment" />
+    </dialog>
+
+    <fragment
+        android:id="@+id/filterFragment"
+        android:name="es.wokis.projectfinance.ui.filter.fragment.FilterFragment"
+        android:label="FilterFragment"
+        tools:layout="@layout/fragment_filter">
+
+        <action
+            android:id="@+id/action__filter__to__add_invoice"
+            app:destination="@id/addInvoiceDialogFragment">
+            <argument
+                android:name="invoiceId"
+                app:argType="long" />
+
+            <argument
+                android:name="invoiceType"
+                app:argType="string" />
+        </action>
+
+        <action
+            android:id="@+id/action__filter__to__detail"
+            app:destination="@id/invoiceDetailDialogFragment" />
+    </fragment>
+
+    <dialog
+        android:id="@+id/cloudSynchronizationDialogFragment"
+        android:name="es.wokis.projectfinance.ui.addinvoice.dialog.CloudSynchronizationDialogFragment"
+        android:label="CloudSynchronizationDialogFragment"
+        tools:layout="@layout/dialog_cloud_synchronization">
+
+        <argument
+            android:name="synchronize"
+            app:argType="boolean" />
+
+    </dialog>
+
+    <dialog
+        android:id="@+id/reactionDetailDialogFragment"
+        android:name="es.wokis.projectfinance.ui.reaction.fragment.ReactionDetailDialogFragment"
+        android:label="ReactionDetailDialogFragment"
+        tools:layout="@layout/dialog_reaction_detail">
+
+        <argument
+            android:name="id"
+            app:argType="long" />
+
+    </dialog>
+
+    <fragment
+        android:id="@+id/biometricsFragment"
+        android:name="es.wokis.projectfinance.ui.login.fragment.BiometricsFragment"
+        android:label="BiometricsFragment"
+        tools:layout="@layout/fragment_biometrics">
+
+        <action
+            android:id="@+id/action__biometrics__to__home"
+            app:destination="@id/homeFragment" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/graphsFragment"
+        android:name="es.wokis.projectfinance.ui.graphs.fragment.GraphsFragment"
+        android:label="GraphsFragment"
+        tools:layout="@layout/fragment_graphs" />
+
+    <include app:graph="@navigation/notification_rationale_navigation" />
+
+    <include app:graph="@navigation/profile_navigation" />
+
+</navigation>

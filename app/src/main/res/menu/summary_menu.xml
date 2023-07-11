@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/dashboard__menu__filter"
+        android:icon="@drawable/ic_filter"
+        android:title="@string/dashboard__filter"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/dashboard__menu__sync_now"
+        android:icon="@drawable/ic_cloud_sync_now"
+        android:title="@string/dashboard__sync_now"
+        app:showAsAction="always" />
+</menu>

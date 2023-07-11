@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    app:cardCornerRadius="8dp"
+    app:cardElevation="6dp">
+
+    <TextView
+        style="@style/Text.Bold.Body1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawablePadding="8dp"
+        android:padding="16dp"
+        app:drawableTint="?attr/colorPrimary"
+        android:text="@string/popup_home__title"
+        app:drawableStartCompat="@drawable/ic_new" />
+
+</androidx.cardview.widget.CardView>

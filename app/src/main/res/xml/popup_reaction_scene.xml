@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <ConstraintSet android:id="@+id/reaction_start">
+        <Constraint android:id="@+id/popup_reaction__label__fire" />
+        <Constraint android:id="@+id/popup_reaction__label__confetti" />
+        <Constraint android:id="@+id/popup_reaction__label__sad" />
+        <Constraint android:id="@+id/popup_reaction__label__surprised" />
+        <Constraint android:id="@+id/popup_reaction__label__pray" />
+        <Constraint android:id="@+id/popup_reaction__container__reactions" />
+        <Constraint android:id="@+id/popup_reaction__btn__other_reactions" />
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/reaction_end">
+        <Constraint android:id="@+id/popup_reaction__label__fire" />
+        <Constraint android:id="@+id/popup_reaction__label__confetti" />
+        <Constraint android:id="@+id/popup_reaction__label__sad" />
+        <Constraint android:id="@+id/popup_reaction__label__surprised" />
+        <Constraint android:id="@+id/popup_reaction__label__pray" />
+        <Constraint android:id="@+id/popup_reaction__container__reactions" />
+        <Constraint android:id="@+id/popup_reaction__btn__other_reactions" />
+    </ConstraintSet>
+
+    <Transition
+        app:autoTransition="animateToEnd"
+        app:constraintSetEnd="@+id/reaction_end"
+        app:constraintSetStart="@+id/reaction_start"
+        app:duration="750">
+
+        <KeyFrameSet>
+            <KeyAttribute
+                android:alpha="0"
+                android:translationX="-50dp"
+                app:framePosition="0"
+                app:motionTarget="@id/popup_reaction__label__fire" />
+
+            <KeyAttribute
+                android:alpha="0.25"
+                android:rotation="-35"
+                android:scaleX="1.15"
+                android:scaleY="1.15"
+                app:framePosition="33"
+                app:motionTarget="@id/popup_reaction__label__fire" />
+
+            <KeyAttribute
+                android:rotation="35"
+                android:scaleX="1.15"
+                android:scaleY="1.15"
+                app:framePosition="66"
+                app:motionTarget="@id/popup_reaction__label__fire" />
+        </KeyFrameSet>
+
+        <KeyFrameSet>
+            <KeyAttribute
+                android:alpha="0"
+                android:translationX="-50dp"
+                app:framePosition="0"
+                app:motionTarget="@id/popup_reaction__label__confetti" />
+
+            <KeyAttribute
+                android:alpha="0.25"
+                android:rotation="-35"
+                android:scaleX="1.15"
+                android:scaleY="1.15"
+                app:framePosition="33"
+                app:motionTarget="@id/popup_reaction__label__confetti" />
+
+            <KeyAttribute
+                android:rotation="35"
+                android:scaleX="1.15"
+                android:scaleY="1.15"
+                app:framePosition="66"
+                app:motionTarget="@id/popup_reaction__label__confetti" />
+        </KeyFrameSet>
+
+        <KeyFrameSet>
+            <KeyAttribute
+                android:alpha="0"
+                android:translationX="-50dp"
+                app:framePosition="0"
+                app:motionTarget="@id/popup_reaction__label__sad" />
+
+            <KeyAttribute
+                android:alpha="0.25"
+                android:rotation="-35"
+                android:scaleX="1.15"
+                android:scaleY="1.15"
+                app:framePosition="33"
+                app:motionTarget="@id/popup_reaction__label__sad" />
+
+            <KeyAttribute
+                android:rotation="35"
+                android:scaleX="1.15"
+                android:scaleY="1.15"
+                app:framePosition="66"
+                app:motionTarget="@id/popup_reaction__label__sad" />
+        </KeyFrameSet>
+
+        <KeyFrameSet>
+            <KeyAttribute
+                android:alpha="0"
+                android:translationX="-50dp"
+                app:framePosition="0"
+                app:motionTarget="@id/popup_reaction__label__surprised" />
+
+            <KeyAttribute
+                android:alpha="0.25"
+                android:rotation="-35"
+                android:scaleX="1.15"
+                android:scaleY="1.15"
+                app:framePosition="33"
+                app:motionTarget="@id/popup_reaction__label__surprised" />
+
+            <KeyAttribute
+                android:rotation="35"
+                android:scaleX="1.15"
+                android:scaleY="1.15"
+                app:framePosition="66"
+                app:motionTarget="@id/popup_reaction__label__surprised" />
+        </KeyFrameSet>
+
+        <KeyFrameSet>
+            <KeyAttribute
+                android:alpha="0"
+                android:translationX="-50dp"
+                app:framePosition="0"
+                app:motionTarget="@id/popup_reaction__label__pray" />
+
+            <KeyAttribute
+                android:alpha="0.25"
+                android:rotation="-35"
+                android:scaleX="1.15"
+                android:scaleY="1.15"
+                app:framePosition="33"
+                app:motionTarget="@id/popup_reaction__label__pray" />
+
+            <KeyAttribute
+                android:rotation="35"
+                android:scaleX="1.15"
+                android:scaleY="1.15"
+                app:framePosition="66"
+                app:motionTarget="@id/popup_reaction__label__pray" />
+        </KeyFrameSet>
+
+        <KeyFrameSet>
+            <KeyAttribute
+                android:alpha="0"
+                android:translationX="-50dp"
+                app:framePosition="0"
+                app:motionTarget="@id/popup_reaction__btn__other_reactions" />
+        </KeyFrameSet>
+
+    </Transition>
+
+</MotionScene>

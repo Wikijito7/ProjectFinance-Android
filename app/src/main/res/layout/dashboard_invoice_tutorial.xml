@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:animateLayoutChanges="true"
+    android:background="@color/black_75_alpha"
+    android:visibility="gone"
+    tools:visibility="visible">
+
+    <TextView
+        android:id="@+id/edit_invoice_type__label__main_title"
+        style="@style/Text.Bold.Body1.White"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:drawablePadding="8dp"
+        android:text="@string/dashboard_tutorial__title"
+        app:drawableStartCompat="@drawable/ic_new"
+        app:drawableTint="?attr/colorPrimary"
+        app:layout_constraintEnd_toStartOf="@id/dashboard_tutorial__btn__close"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/dashboard_tutorial__btn__close"
+        style="@style/Drawable"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="12dp"
+        android:contentDescription="@string/general__close_desc"
+        android:padding="4dp"
+        android:src="@drawable/ic_close"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="@color/white" />
+
+    <TextView
+        android:id="@+id/dashboard_tutorial__label__edit"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/light_green"
+        android:paddingHorizontal="16dp"
+        app:drawableStartCompat="@drawable/ic_edit"
+        app:drawableTint="@color/white"
+        app:layout_constraintBottom_toBottomOf="@id/dashboard_tutorial__container__invoice"
+        app:layout_constraintEnd_toStartOf="@id/dashboard_tutorial__label__delete"
+        app:layout_constraintStart_toStartOf="@id/dashboard_tutorial__container__invoice"
+        app:layout_constraintTop_toTopOf="@id/dashboard_tutorial__container__invoice" />
+
+    <TextView
+        android:id="@+id/dashboard_tutorial__label__delete"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/red"
+        android:paddingHorizontal="16dp"
+        app:drawableEndCompat="@drawable/ic_delete"
+        app:drawableTint="@color/white"
+        app:layout_constraintBottom_toBottomOf="@id/dashboard_tutorial__container__invoice"
+        app:layout_constraintEnd_toEndOf="@id/dashboard_tutorial__container__invoice"
+        app:layout_constraintStart_toEndOf="@id/dashboard_tutorial__label__edit"
+        app:layout_constraintTop_toTopOf="@id/dashboard_tutorial__container__invoice" />
+
+    <LinearLayout
+        android:id="@+id/dashboard_tutorial__container__invoice"
+        style="@style/InvoiceBackground"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/dashboard_tutorial__btn__close">
+
+        <include
+            android:id="@+id/dashboard_tutorial__include__invoice"
+            layout="@layout/row_dashboard_invoice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/dashboard_tutorial__img__press"
+        style="@style/Drawable"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:importantForAccessibility="no"
+        android:src="@drawable/ic_touch"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@id/dashboard_tutorial__container__invoice"
+        app:layout_constraintEnd_toEndOf="@id/dashboard_tutorial__container__invoice"
+        app:layout_constraintStart_toStartOf="@id/dashboard_tutorial__container__invoice"
+        app:layout_constraintTop_toTopOf="@id/dashboard_tutorial__container__invoice" />
+
+    <TextView
+        android:id="@+id/dashboard_tutorial__label__description"
+        style="@style/Text.Bold.Body1.White"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginBottom="20dp"
+        android:text="@string/dashboard_tutorial__tutorial"
+        app:layout_constraintBottom_toTopOf="@id/edit_invoice_type__btn__accept"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/edit_invoice_type__btn__accept"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:text="@string/dashboard_tutorial__next"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

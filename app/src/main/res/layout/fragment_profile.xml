@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/profile__container__error"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:background="@drawable/bg_icon_rounded"
+        android:backgroundTint="@color/error"
+        android:padding="16dp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="visible">
+
+        <ImageView
+            android:id="@+id/profile__img__error"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:importantForAccessibility="no"
+            android:src="@drawable/ic_error"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            style="@style/Text.Regular.Body2.Black"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="@string/profile__not_verified_error"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/profile__img__error"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ImageView
+        android:id="@+id/profile__img__user_picture"
+        android:layout_width="72dp"
+        android:layout_height="72dp"
+        android:layout_margin="16dp"
+        android:contentDescription="@string/profile__img_desc"
+        android:scaleType="fitCenter"
+        android:src="@drawable/ic_user"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/profile__container__error"
+        tools:src="@tools:sample/avatars" />
+
+    <TextView
+        android:id="@+id/profile__label__username"
+        style="@style/Text.Bold.Body1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="16dp"
+        android:layout_marginStart="16dp"
+        app:layout_constraintEnd_toStartOf="@id/profile__container__badges"
+        app:layout_constraintStart_toEndOf="@id/profile__img__user_picture"
+        app:layout_constraintTop_toBottomOf="@id/profile__container__error"
+        tools:text="WokisHere" />
+
+    <LinearLayout
+        android:id="@+id/profile__container__badges"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginVertical="16dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="16dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/profile__label__username"
+        app:layout_constraintTop_toBottomOf="@id/profile__container__error" />
+
+    <TextView
+        android:id="@+id/profile__label__invoices_created"
+        style="@style/Text.Regular.Body2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="4dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/profile__img__user_picture"
+        app:layout_constraintTop_toBottomOf="@id/profile__label__username"
+        tools:text="60 invoices created" />
+
+    <TextView
+        android:id="@+id/profile__label__joined_on"
+        style="@style/Text.Regular.Body2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="4dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/profile__img__user_picture"
+        app:layout_constraintTop_toBottomOf="@id/profile__label__invoices_created"
+        tools:text="Joined on 23/12/2022" />
+
+    <View
+        android:id="@+id/profile__separator__user_info"
+        style="@style/Separator"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/profile__label__joined_on" />
+
+    <TextView
+        android:id="@+id/profile__label__edit_profile"
+        style="@style/Text.Regular.Body1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:layout_weight="1"
+        android:drawablePadding="8dp"
+        android:paddingVertical="4dp"
+        android:text="@string/profile__edit_profile"
+        app:drawableStartCompat="@drawable/ic_edit"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/profile__separator__user_info" />
+
+    <TextView
+        android:id="@+id/profile__label__config"
+        style="@style/Text.Regular.Body1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:layout_weight="1"
+        android:drawablePadding="8dp"
+        android:paddingVertical="4dp"
+        android:text="@string/profile__settings"
+        app:drawableStartCompat="@drawable/ic_settings"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/profile__label__edit_profile" />
+
+    <TextView
+        android:id="@+id/profile__label__contacts"
+        style="@style/Text.Regular.Body1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:layout_weight="1"
+        android:drawablePadding="8dp"
+        android:paddingVertical="4dp"
+        android:text="@string/profile__contacts"
+        android:visibility="gone"
+        app:drawableStartCompat="@drawable/ic_contacts"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/profile__label__config" />
+
+    <TextView
+        android:id="@+id/profile__label__sign_out"
+        style="@style/Text.Regular.Body1.Red"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:layout_weight="1"
+        android:drawablePadding="8dp"
+        android:paddingVertical="4dp"
+        android:text="@string/profile__sign_out"
+        app:drawableStartCompat="@drawable/ic_logout"
+        app:drawableTint="@color/red"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/profile__label__contacts" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

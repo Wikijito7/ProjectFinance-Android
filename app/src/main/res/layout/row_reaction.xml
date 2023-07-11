@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:clickable="false"
+    android:focusable="false">
+
+    <com.vanniktech.emoji.EmojiTextView
+        android:id="@+id/row_dashboard__label__emoji"
+        style="@style/Text.Bold.Title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="2dp"
+        android:clickable="false"
+        android:focusable="false"
+        android:imeOptions="actionSend"
+        android:inputType="textCapSentences|textMultiLine"
+        tools:text="😍" />
+
+</FrameLayout>

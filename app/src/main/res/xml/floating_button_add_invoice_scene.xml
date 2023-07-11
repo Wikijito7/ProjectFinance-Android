@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <ConstraintSet android:id="@+id/deposit_start">
+        <Constraint android:id="@+id/floating_button__btn__deposit">
+            <PropertySet android:visibility="gone" />
+        </Constraint>
+
+        <Constraint android:id="@+id/floating_button__btn__expense">
+            <PropertySet android:visibility="gone" />
+        </Constraint>
+
+        <Constraint android:id="@+id/floating_button__label__deposit">
+            <PropertySet android:visibility="gone" />
+        </Constraint>
+
+        <Constraint android:id="@+id/floating_button__label__expense">
+            <PropertySet android:visibility="gone" />
+        </Constraint>
+
+        <Constraint android:id="@+id/floating_button__view__background">
+            <PropertySet android:visibility="invisible" />
+        </Constraint>
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/deposit_end">
+        <Constraint android:id="@+id/floating_button__btn__deposit">
+            <PropertySet android:visibility="visible" />
+        </Constraint>
+
+        <Constraint android:id="@+id/floating_button__btn__expense">
+            <PropertySet android:visibility="visible" />
+        </Constraint>
+
+        <Constraint android:id="@+id/floating_button__label__deposit">
+            <PropertySet android:visibility="visible" />
+        </Constraint>
+
+        <Constraint android:id="@+id/floating_button__label__expense">
+            <PropertySet android:visibility="visible" />
+        </Constraint>
+
+        <Constraint android:id="@+id/floating_button__view__background">
+            <PropertySet android:visibility="visible" />
+        </Constraint>
+    </ConstraintSet>
+
+    <Transition
+        app:constraintSetEnd="@+id/deposit_end"
+        app:constraintSetStart="@+id/deposit_start"
+        app:duration="250">
+
+        <OnClick
+            app:clickAction="toggle"
+            app:targetId="@+id/floating_button__btn__add_invoice" />
+
+    </Transition>
+</MotionScene>

@@ -1,0 +1,173 @@
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/profileNavigation"
+    app:startDestination="@id/profileFragment">
+
+    <include app:graph="@navigation/notification_rationale_navigation" />
+
+    <fragment
+        android:id="@+id/TOTPFragment"
+        android:name="es.wokis.projectfinance.ui.totp.fragment.TOTPFragment"
+        android:label="TOTPFragment"
+        tools:layout="@layout/fragment_totp" />
+
+    <fragment
+        android:id="@+id/configFragment"
+        android:name="es.wokis.projectfinance.ui.profile.fragment.ConfigFragment"
+        android:label="ConfigFragment"
+        tools:layout="@layout/fragment_config">
+
+        <action
+            android:id="@+id/action__config__to__theme_selector"
+            app:destination="@id/themeSelectorDialogFragment" />
+
+        <action
+            android:id="@+id/action__config__to__totp_dialog"
+            app:destination="@id/TOTPRequestDialogFragment" />
+
+        <action
+            android:id="@+id/action__config__to__totp"
+            app:destination="@id/TOTPFragment" />
+
+    </fragment>
+
+    <dialog
+        android:id="@+id/loginHelpDialogFragment"
+        android:name="es.wokis.projectfinance.ui.login.dialog.LoginHelpDialogFragment"
+        android:label="LoginHelpDialogFragment"
+        tools:layout="@layout/dialog_login_help" />
+
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="es.wokis.projectfinance.ui.profile.fragment.ProfileFragment"
+        android:label="ProfileFragment"
+        tools:layout="@layout/fragment_profile">
+
+        <action
+            android:id="@+id/action__profile__to__login"
+            app:destination="@id/loginFragment" />
+
+        <action
+            android:id="@+id/action__profile__to__edit_profile"
+            app:destination="@id/editProfileFragment" />
+
+        <action
+            android:id="@+id/action__profile__to__config"
+            app:destination="@id/configFragment" />
+
+        <action
+            android:id="@+id/action__profile__to__badges"
+            app:destination="@id/badgesDialogFragment" />
+
+        <action
+            android:id="@+id/action__profile__to__verification"
+            app:destination="@id/verificationDialogFragment" />
+
+    </fragment>
+
+    <dialog
+        android:id="@+id/themeSelectorDialogFragment"
+        android:name="es.wokis.projectfinance.ui.profile.dialog.ThemeSelectorDialogFragment"
+        android:label="ThemeSelectorDialogFragment"
+        tools:layout="@layout/dialog_theme_selector" />
+    <dialog
+        android:id="@+id/badgesDialogFragment"
+        android:name="es.wokis.projectfinance.ui.profile.dialog.BadgesDialogFragment"
+        android:label="BadgesDialogFragment"
+        tools:layout="@layout/dialog_badges_detail" />
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="es.wokis.projectfinance.ui.login.fragment.LoginFragment"
+        android:label="LoginFragment"
+        tools:layout="@layout/fragment_login">
+
+        <action
+            android:id="@+id/action__login__to__profile"
+            app:destination="@id/profileFragment" />
+
+        <action
+            android:id="@+id/action__login__to__help"
+            app:destination="@id/loginHelpDialogFragment" />
+
+        <action
+            android:id="@+id/action__login__to__totp"
+            app:destination="@id/TOTPRequestDialogFragment" />
+
+        <action
+            android:id="@+id/action__login__to__notification_rationale"
+            app:destination="@id/notificationRationaleGraph" />
+
+        <action
+            android:id="@+id/action__login__to__recover_pass"
+            app:destination="@id/changePasswordDialogFragment" />
+
+    </fragment>
+
+    <dialog
+        android:id="@+id/TOTPRequestDialogFragment"
+        android:name="es.wokis.projectfinance.ui.totp.fragment.TOTPRequestDialogFragment"
+        android:label="TOTPRequestDialogFragment"
+        tools:layout="@layout/dialog_totp_request">
+
+        <argument
+            android:name="requestKey"
+            app:argType="string" />
+
+    </dialog>
+
+    <fragment
+        android:id="@+id/editProfileFragment"
+        android:name="es.wokis.projectfinance.ui.profile.fragment.EditProfileFragment"
+        android:label="EditProfileFragment"
+        tools:layout="@layout/fragment_edit_profile">
+
+        <action
+            android:id="@+id/action__edit_profile__to__crop_image"
+            app:destination="@id/cropImageFragment" />
+
+        <action
+            android:id="@+id/action__edit_profile__to__totp"
+            app:destination="@id/TOTPRequestDialogFragment" />
+
+        <action
+            android:id="@+id/action__edit_profile__to__recover_pass"
+            app:destination="@id/changePasswordDialogFragment" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/cropImageFragment"
+        android:name="es.wokis.projectfinance.ui.profile.fragment.CropImageFragment"
+        android:label="CropImageFragment"
+        tools:layout="@layout/fragment_crop_image">
+
+        <argument
+            android:name="imageUri"
+            app:argType="android.net.Uri" />
+
+    </fragment>
+
+    <dialog
+        android:id="@+id/changePasswordDialogFragment"
+        android:name="es.wokis.projectfinance.ui.login.fragment.ChangePasswordDialogFragment"
+        android:label="ChangePasswordDialogFragment"
+        tools:layout="@layout/dialog_change_pass">
+
+        <argument
+            android:name="recoverMode"
+            app:argType="boolean" />
+
+        <action
+            android:id="@+id/action__change_pass__to__totp"
+            app:destination="@id/TOTPRequestDialogFragment" />
+
+    </dialog>
+
+    <dialog
+        android:id="@+id/verificationDialogFragment"
+        android:name="es.wokis.projectfinance.ui.profile.dialog.VerificationDialogFragment"
+        android:label="VerificationDialogFragment"
+        tools:layout="@layout/dialog_verification" />
+
+</navigation>

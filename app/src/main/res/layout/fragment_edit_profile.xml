@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/edit_profile__img__user_picture"
+        android:layout_width="102dp"
+        android:layout_height="102dp"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="20dp"
+        android:contentDescription="@string/profile__img_desc"
+        android:scaleType="fitCenter"
+        android:src="@drawable/ic_user"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:background="@drawable/bg_color_category"
+        tools:backgroundTint="@color/red" />
+
+    <ImageView
+        android:id="@+id/edit_profile__btn__user_picture"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:background="@drawable/bg_color_category"
+        android:backgroundTint="?attr/colorPrimary"
+        android:contentDescription="@string/edit_profile__edit_picture"
+        android:elevation="6dp"
+        android:padding="6dp"
+        android:src="@drawable/ic_add_photo"
+        app:layout_constraintEnd_toEndOf="@id/edit_profile__img__user_picture"
+        app:layout_constraintTop_toTopOf="@id/edit_profile__img__user_picture"
+        app:tint="?attr/colorOnPrimary" />
+
+    <View
+        android:id="@+id/edit_profile__separator__user_info"
+        style="@style/Separator"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/edit_profile__img__user_picture" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/edit_profile__container__username"
+        style="@style/InputLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="16dp"
+        android:hint="@string/login__username"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/edit_profile__separator__user_info">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edit_profile__input__username"
+            style="@style/Input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:imeOptions="actionDone"
+            android:inputType="text"
+            android:textSize="@dimen/body1" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:id="@+id/edit_profile__label__email_tile"
+        style="@style/Text.Bold.Body2.Primary"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:text="@string/login__email"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/edit_profile__container__username"
+        tools:visibility="visible" />
+
+    <TextView
+        android:id="@+id/edit_profile__label__email_description"
+        style="@style/Text.Regular.Body1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="8dp"
+        android:ellipsize="end"
+        android:maxLength="200"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/edit_profile__label__email_tile"
+        tools:text="wokis@wokis.es" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/edit_profile__container__change_pass"
+        android:background="@drawable/bg_clickable"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:layout_marginHorizontal="8dp"
+        android:layout_marginTop="8dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/edit_profile__label__email_description">
+
+        <TextView
+            android:id="@+id/edit_profile__label__change_pass"
+            style="@style/Text.Bold.Body1.Primary"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:text="@string/edit_profile__change_pass"
+            app:layout_constraintEnd_toStartOf="@id/edit_profile__img__edit_pass"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/edit_profile__label__change_pass_desc"
+            style="@style/Text.Regular.Body1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:text="@string/edit_profile__change_pass_desc"
+            app:layout_constraintEnd_toStartOf="@id/edit_profile__img__edit_pass"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/edit_profile__label__change_pass" />
+
+        <ImageView
+            android:id="@+id/edit_profile__img__edit_pass"
+            style="@style/Drawable"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:importantForAccessibility="no"
+            android:src="@drawable/ic_password"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/edit_profile__btn__save"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginVertical="16dp"
+        android:text="@string/edit_profile__save"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/edit_profile__btn__go_back"
+        style="@style/Text.Regular.Body1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:backgroundTint="@color/transparent"
+        android:padding="0dp"
+        android:text="@string/edit_profile__go_back"
+        android:textColor="?attr/colorSecondary"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="16dp">
+
+    <FrameLayout
+        android:id="@+id/graph_data__container__icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/graph_data__img__icon"
+            style="@style/Drawable"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginEnd="16dp"
+            android:importantForAccessibility="no"
+            android:src="@drawable/bg_color_category" />
+
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/graph_data__label__title"
+        style="@style/Text.Bold.Body1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:ellipsize="end"
+        android:maxLines="2"
+        app:layout_constraintEnd_toStartOf="@id/graph_data__label__amount"
+        app:layout_constraintStart_toEndOf="@id/graph_data__container__icon"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Gasto de garaje" />
+
+    <TextView
+        android:id="@+id/graph_data__label__desc"
+        style="@style/Text.Regular.Body2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="4dp"
+        app:layout_constraintStart_toEndOf="@id/graph_data__container__icon"
+        app:layout_constraintEnd_toStartOf="@id/graph_data__label__amount"
+        app:layout_constraintTop_toBottomOf="@id/graph_data__label__title"
+        tools:text="18/09/2022" />
+
+    <TextView
+        android:id="@+id/graph_data__label__amount"
+        style="@style/Text.Bold.Body1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="4dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="55,00€" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

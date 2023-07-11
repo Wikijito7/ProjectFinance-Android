@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<set xmlns:android="http://schemas.android.com/apk/res/android"
+    android:ordering="sequentially"
+    android:repeatMode="restart"
+    android:startOffset="500">
+
+    <set android:duration="250">
+        <alpha
+            android:fromAlpha="0.0"
+            android:interpolator="@android:anim/accelerate_interpolator"
+            android:toAlpha="1.0" />
+    </set>
+
+    <set android:duration="250"
+        android:startOffset="750">
+        <alpha
+            android:fromAlpha="1.0"
+            android:interpolator="@android:anim/accelerate_interpolator"
+            android:toAlpha="0.0" />
+    </set>
+</set>

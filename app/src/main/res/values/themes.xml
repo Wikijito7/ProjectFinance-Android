@@ -1,0 +1,231 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.ProjectFinance" parent="Theme.Material3.Light.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/orange</item>
+        <item name="colorPrimaryVariant">@color/dark_orange</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorSecondary">@color/orange</item>
+        <item name="colorSecondaryVariant">@color/dark_orange</item>
+        <item name="colorOnSecondary">@color/white</item>
+        <item name="colorTertiary">?android:attr/textColor</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="colorPrimaryContainer">?attr/colorPrimary</item>
+        <item name="colorError">@color/red</item>
+        <item name="colorOnError">@color/white</item>
+        <item name="colorErrorContainer">@color/md_theme_dark_errorContainer</item>
+        <item name="colorSecondaryContainer">@color/light_orange_25_alpha</item>
+        <item name="colorOnErrorContainer">@color/md_theme_dark_onErrorContainer</item>
+        <item name="colorOnBackground">@color/md_theme_dark_onBackground</item>
+        <item name="colorSurface">@color/white</item>
+        <item name="colorOnSurface">@color/md_theme_dark_onSurface</item>
+        <item name="scrimBackground">@color/transparent</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor">?attr/colorPrimary</item>
+        <!-- Customize your theme here. -->
+        <item name="android:windowLightStatusBar" tools:targetApi="M">true</item>
+        <item name="colorControlNormal">@color/white</item>
+        <item name="snackbarStyle">@style/SnackBarBackgroundStyle</item>
+        <item name="snackbarButtonStyle">@style/SnackBarBtn</item>
+        <item name="snackbarTextViewStyle">@style/SnackBarText</item>
+        <item name="android:forceDarkAllowed" tools:targetApi="q">false</item>
+    </style>
+
+    <style name="SnackBarBackgroundStyle" parent="@style/Widget.Material3.Snackbar">
+        <item name="backgroundTint">@color/white</item>
+    </style>
+
+    <style name="Toolbar" parent="Theme.ProjectFinance">
+        <item name="android:background">?android:attr/statusBarColor</item>
+        <item name="titleTextColor">?attr/colorOnPrimary</item>
+        <item name="titleTextAppearance">@style/Text.Bold.Title</item>
+    </style>
+
+    <style name="InvoiceBackground" parent="Theme.ProjectFinance">
+        <item name="android:background">@color/white</item>
+    </style>
+
+    <style name="SnackBarBtn" parent="@style/Widget.MaterialComponents.Button.TextButton.Snackbar">
+        <item name="android:textColor">?attr/colorPrimary</item>
+    </style>
+
+    <style name="SnackBarText" parent="@style/Widget.MaterialComponents.Snackbar.TextView">
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="Drawable" parent="Theme.ProjectFinance">
+        <item name="drawableTint">@color/black</item>
+        <item name="android:tint">@color/black</item>
+    </style>
+
+    <style name="Checkbox" parent="Theme.ProjectFinance">
+        <item name="android:minWidth">0dp</item>
+        <item name="android:minHeight">0dp</item>
+        <item name="android:padding">0dp</item>
+        <item name="android:layout_margin">0dp</item>
+        <item name="android:buttonTint">@color/color_radio_button</item>
+        <item name="android:layout_marginEnd">-4dp</item>
+    </style>
+
+    <style name="Separator">
+        <item name="android:background">@color/light_gray_25_alpha</item>
+    </style>
+
+    <style name="ToolbarPopUp" parent="Theme.AppCompat.Light">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textColorSecondary">@color/white</item>
+        <item name="android:actionMenuTextColor">@color/white</item>
+        <item name="actionMenuTextColor">@color/white</item>
+        <item name="android:actionOverflowButtonStyle">@style/OverflowButtonStyle</item>
+        <item name="navigationIconTint">@color/white</item>
+        <item name="android:tint">@color/white</item>
+    </style>
+
+    <style name="OverflowButtonStyle" parent="Widget.AppCompat.ActionButton.Overflow">
+        <item name="tint">@color/white</item>
+    </style>
+
+    <style name="Button" parent="Text.Bold.Body1">
+        <item name="android:background">@drawable/bg_button</item>
+        <item name="android:tint">?attr/colorOnPrimary</item>
+        <item name="drawableTint">?attr/colorOnPrimary</item>
+        <item name="android:textColor">@color/color_button</item>
+        <item name="android:paddingTop">8dp</item>
+        <item name="android:paddingBottom">8dp</item>
+        <item name="android:paddingStart">16dp</item>
+        <item name="android:paddingEnd">16dp</item>
+    </style>
+
+    <style name="Theme.ProjectFinance.BottomSheetDialog" parent="Theme.Material3.Light.BottomSheetDialog">
+        <item name="android:theme">@style/Theme.ProjectFinance</item>
+        <item name="bottomSheetStyle">@style/DialogStyle</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:windowSoftInputMode">adjustResize</item>
+    </style>
+
+    <style name="DialogStyle">
+        <item name="android:background">@drawable/bg_bottom_sheet</item>
+    </style>
+
+    <style name="Input" parent="Text">
+        <item name="android:background">@color/transparent</item>
+        <item name="android:paddingTop">4dp</item>
+        <item name="android:paddingBottom">4dp</item>
+    </style>
+
+    <style name="InputLayout" parent="Widget.Design.TextInputLayout">
+        <item name="android:textColorHint">@color/color_input_hint</item>
+        <item name="hintTextColor">@color/color_input_hint</item>
+        <item name="android:textCursorDrawable">@null</item>
+        <item name="android:padding">8dp</item>
+        <item name="android:background">@drawable/bg_input_layout</item>
+    </style>
+
+    <style name="Text" parent="Theme.ProjectFinance">
+        <item name="android:textColor">@color/black</item>
+        <item name="drawableTint">@color/black</item>
+    </style>
+
+    <style name="Text.Regular">
+        <item name="android:textStyle">normal</item>
+    </style>
+
+    <style name="Text.Bold">
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="Text.Regular.Body1">
+        <item name="android:textSize">@dimen/body1</item>
+    </style>
+
+    <style name="Text.Bold.Body1">
+        <item name="android:textSize">@dimen/body1</item>
+    </style>
+
+    <style name="Text.Regular.Body2">
+        <item name="android:textSize">@dimen/body2</item>
+    </style>
+
+    <style name="Text.Regular.Caption">
+        <item name="android:textSize">@dimen/caption</item>
+    </style>
+
+    <style name="Text.Bold.Caption">
+        <item name="android:textSize">@dimen/caption</item>
+    </style>
+
+    <style name="Text.Bold.Body2">
+        <item name="android:textSize">@dimen/body2</item>
+    </style>
+
+    <style name="Text.Bold.Headline">
+        <item name="android:textSize">@dimen/headline</item>
+    </style>
+
+    <style name="Text.Bold.Title">
+        <item name="android:textSize">@dimen/title</item>
+    </style>
+
+    <style name="Text.Regular.Body2.Primary">
+        <item name="android:textColor">?attr/colorPrimary</item>
+    </style>
+
+    <style name="Text.Regular.Body2.Red">
+        <item name="android:textColor">@color/red</item>
+    </style>
+
+    <style name="Text.Bold.Body2.Primary">
+        <item name="android:textColor">?attr/colorPrimary</item>
+    </style>
+
+    <style name="Text.Bold.Body2.Black">
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="Text.Bold.Body2.Red">
+        <item name="android:textColor">@color/red</item>
+    </style>
+
+    <style name="Text.Regular.Body2.Gray">
+        <item name="android:textColor">@color/light_gray</item>
+    </style>
+
+    <style name="Text.Regular.Body2.Black">
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="Text.Bold.Body1.White">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="Text.Bold.Body1.Primary">
+        <item name="android:textColor">?attr/colorPrimary</item>
+    </style>
+
+    <style name="Text.Regular.Body1.White">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="Text.Regular.Body2.White">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="Text.Regular.Body1.Red">
+        <item name="android:textColor">@color/red</item>
+    </style>
+
+    <style name="Text.Regular.Body1.Primary">
+        <item name="android:textColor">?attr/colorPrimary</item>
+    </style>
+
+    <style name="InvoiceFloatingButton">
+        <item name="android:layout_margin">16dp</item>
+        <item name="android:background">@drawable/bg_color_category</item>
+        <item name="android:backgroundTint">?attr/colorPrimary</item>
+        <item name="tint">?attr/colorOnPrimary</item>
+        <item name="android:padding">8dp</item>
+    </style>
+</resources>

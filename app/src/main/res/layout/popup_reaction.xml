@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.motion.widget.MotionLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/popup_reaction__container__reactions"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    android:background="@drawable/bg_reaction"
+    app:layoutDescription="@xml/popup_reaction_scene">
+
+    <com.vanniktech.emoji.EmojiTextView
+        android:id="@+id/popup_reaction__label__fire"
+        style="@style/Text.Bold.Title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:text="🔥"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.vanniktech.emoji.EmojiTextView
+        android:id="@+id/popup_reaction__label__confetti"
+        style="@style/Text.Bold.Title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:text="🎉"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@id/popup_reaction__label__fire"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.vanniktech.emoji.EmojiTextView
+        android:id="@+id/popup_reaction__label__sad"
+        style="@style/Text.Bold.Title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:text="😔"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@id/popup_reaction__label__confetti"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.vanniktech.emoji.EmojiTextView
+        android:id="@+id/popup_reaction__label__surprised"
+        style="@style/Text.Bold.Title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:text="😯"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@id/popup_reaction__label__sad"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.vanniktech.emoji.EmojiTextView
+        android:id="@+id/popup_reaction__label__pray"
+        style="@style/Text.Bold.Title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:text="🙏"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@id/popup_reaction__label__surprised"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/popup_reaction__btn__other_reactions"
+        android:layout_width="28dp"
+        android:layout_height="28dp"
+        android:layout_margin="8dp"
+        android:background="@drawable/bg_color_category"
+        android:padding="4dp"
+        android:src="@drawable/ic_add"
+        app:backgroundTint="?attr/colorPrimary"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/popup_reaction__label__pray"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="?attr/colorOnPrimary" />
+
+</androidx.constraintlayout.motion.widget.MotionLayout>

@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginVertical="16dp"
+    app:cardCornerRadius="8dp"
+    app:cardElevation="6dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.github.mikephil.charting.charts.BarChart
+            android:id="@+id/home__chart__movements"
+            android:layout_width="0dp"
+            android:layout_height="120dp"
+            android:layout_marginHorizontal="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/home__img__deposit_chart"
+            android:layout_width="12dp"
+            android:layout_height="12dp"
+            android:layout_marginHorizontal="16dp"
+            android:importantForAccessibility="no"
+            android:src="@drawable/bg_color_category"
+            app:layout_constraintBottom_toBottomOf="@id/home__label__deposit_chart"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/home__label__deposit_chart"
+            app:tint="?attr/colorPrimary" />
+
+        <TextView
+            android:id="@+id/home__label__deposit_chart"
+            style="@style/Text.Regular.Body2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="8dp"
+            android:text="@string/home__total_deposit"
+            app:layout_constrainedWidth="true"
+            app:layout_constraintEnd_toStartOf="@id/home__img__expense_chart"
+            app:layout_constraintStart_toEndOf="@id/home__img__deposit_chart"
+            app:layout_constraintTop_toBottomOf="@id/home__chart__movements" />
+
+        <TextView
+            android:id="@+id/home__label__total_deposit_quantity"
+            style="@style/Text.Bold.Body1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/home__label__deposit_chart"
+            tools:text="600,99 €" />
+
+        <ImageView
+            android:id="@+id/home__img__expense_chart"
+            android:layout_width="12dp"
+            android:layout_height="12dp"
+            android:layout_marginStart="16dp"
+            android:importantForAccessibility="no"
+            android:src="@drawable/bg_color_category"
+            app:layout_constraintBottom_toBottomOf="@id/home__label__expense_chart"
+            app:layout_constraintStart_toEndOf="@id/home__label__deposit_chart"
+            app:layout_constraintTop_toTopOf="@id/home__label__expense_chart"
+            app:tint="@color/gray" />
+
+        <TextView
+            android:id="@+id/home__label__expense_chart"
+            style="@style/Text.Regular.Body2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="16dp"
+            android:text="@string/home__total_expensed"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constrainedWidth="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/home__img__expense_chart"
+            app:layout_constraintTop_toBottomOf="@id/home__chart__movements" />
+
+        <TextView
+            android:id="@+id/home__label__total_expensed_quantity"
+            style="@style/Text.Bold.Body1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:layout_marginVertical="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@id/home__img__expense_chart"
+            app:layout_constraintTop_toBottomOf="@id/home__label__expense_chart"
+            tools:text="-500,99 €" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

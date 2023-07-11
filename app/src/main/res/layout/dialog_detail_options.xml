@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/DialogStyle"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingBottom="16dp">
+
+    <TextView
+        android:id="@+id/detail_options__label__main_title"
+        style="@style/Text.Bold.Body1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:gravity="center"
+        android:text="@string/detail_options__main_title"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/detail_options__btn__edit_invoice"
+        style="@style/Text.Regular.Body1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:drawablePadding="8dp"
+        android:paddingVertical="4dp"
+        android:text="@string/detail_options__edit_invoice"
+        app:drawableStartCompat="@drawable/ic_edit"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/detail_options__label__main_title" />
+
+    <TextView
+        android:id="@+id/detail_options__btn__add_reaction"
+        style="@style/Text.Regular.Body1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:drawablePadding="8dp"
+        android:paddingVertical="4dp"
+        android:visibility="gone"
+        android:text="@string/detail_options__add_reaction"
+        app:drawableStartCompat="@drawable/ic_emoji"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/detail_options__btn__edit_invoice"
+        tools:visibility="visible" />
+
+    <TextView
+        android:id="@+id/detail_options__btn__remove_invoice"
+        style="@style/Text.Regular.Body1.Red"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:drawablePadding="8dp"
+        android:paddingVertical="4dp"
+        android:text="@string/detail_options__remove_invoice"
+        app:drawableStartCompat="@drawable/ic_delete"
+        app:drawableTint="@color/red"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/detail_options__btn__add_reaction" />
+</androidx.constraintlayout.widget.ConstraintLayout>
