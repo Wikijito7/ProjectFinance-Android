@@ -33,6 +33,7 @@ import es.wokis.projectfinance.data.constants.AppConstants.EMPTY_TEXT
 import es.wokis.projectfinance.data.enums.SelectedThemeEnum
 import es.wokis.projectfinance.databinding.ActivityMainBinding
 import es.wokis.projectfinance.ui.home.fragment.HomeFragmentDirections
+import es.wokis.projectfinance.utils.applyEdgeToEdge
 import es.wokis.projectfinance.utils.hide
 import es.wokis.projectfinance.utils.hideAnim
 import es.wokis.projectfinance.utils.safeNavigation
@@ -83,6 +84,11 @@ class MainActivity : AppCompatActivity() {
         setUpAds()
         checkNotificationPermissions()
         binding?.apply {
+            mainToolbarMainToolbar.applyEdgeToEdge(
+                applyTopPadding = true,
+                applyLeftPadding = true,
+                applyRightPadding = true
+            )
             setUpFloatingButtonListeners()
         }
     }

@@ -31,6 +31,7 @@ import es.wokis.projectfinance.databinding.FragmentLoginBinding
 import es.wokis.projectfinance.ui.base.BaseFragment
 import es.wokis.projectfinance.ui.login.viewmodel.LoginViewModel
 import es.wokis.projectfinance.ui.profile.filter.whiteSpaceFilter
+import es.wokis.projectfinance.utils.applyEdgeToEdge
 import es.wokis.projectfinance.utils.getLocale
 import es.wokis.projectfinance.utils.hideKeyboard
 import es.wokis.projectfinance.utils.isValidEmail
@@ -399,6 +400,12 @@ class LoginFragment : BaseFragment() {
                     } else {
                         R.string.login__sign_up
                     }
+                )
+                root.applyEdgeToEdge(
+                    applyTopPadding = true,
+                    applyBottomPadding = true,
+                    applyLeftPadding = true,
+                    applyRightPadding = true
                 )
             }
         }

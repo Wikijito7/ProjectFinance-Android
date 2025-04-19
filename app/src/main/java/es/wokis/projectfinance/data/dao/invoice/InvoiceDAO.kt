@@ -9,26 +9,26 @@ import kotlinx.coroutines.flow.Flow
 interface InvoiceDAO {
     @Transaction
     @Query("SELECT * FROM invoice i INNER JOIN category c on i.foreignCategoryId = c.categoryId WHERE (userId IS NULL OR userId = :userId) ORDER BY i.date DESC, i.id DESC")
-    fun getAllInvoices(userId: String): Flow<List<FullInvoiceDBO>?>
+    fun getAllInvoices(userId: String): Flow<List<FullInvoiceDBO>>
 
     @Transaction
     @Query("SELECT * FROM invoice i INNER JOIN category c on i.foreignCategoryId = c.categoryId WHERE (userId IS NULL OR userId = :userId) ORDER BY i.date DESC, i.id DESC LIMIT :quantity")
-    fun getInvoices(userId: String, quantity: Int): Flow<List<FullInvoiceDBO>?>
+    fun getInvoices(userId: String, quantity: Int): Flow<List<FullInvoiceDBO>>
 
     @Transaction
     @Query("SELECT * FROM invoice i INNER JOIN category c on i.foreignCategoryId = c.categoryId WHERE (userId IS NULL OR userId = :userId) AND i.date BETWEEN :startDate AND :endDate ORDER BY i.date DESC, i.id DESC")
-    fun getInvoicesBetween(userId: String, startDate: Long, endDate: Long): Flow<List<FullInvoiceDBO>?>
+    fun getInvoicesBetween(userId: String, startDate: Long, endDate: Long): Flow<List<FullInvoiceDBO>>
 
     @Transaction
     @Query("SELECT * FROM invoice i INNER JOIN category c on i.foreignCategoryId = c.categoryId WHERE i.date = :date ORDER BY i.id DESC")
-    fun getInvoicesOn(date: Long): Flow<List<FullInvoiceDBO>?>
+    fun getInvoicesOn(date: Long): Flow<List<FullInvoiceDBO>>
 
     @Transaction
     @Query("SELECT * FROM invoice i INNER JOIN category c on i.foreignCategoryId = c.categoryId WHERE i.id = :id")
     fun getInvoiceById(id: Long): FullInvoiceDBO
 
     @Query("SELECT * FROM invoice WHERE NOT EXISTS(SELECT 1 FROM Category WHERE categoryId = foreignCategoryId)")
-    fun getInvoicesWithoutCategory(): List<InvoiceDBO>?
+    fun getInvoicesWithoutCategory(): List<InvoiceDBO>
 
     @Transaction
     @Query("SELECT * FROM invoice i INNER JOIN category c on i.foreignCategoryId = c.categoryId WHERE i.serverId IS NULL AND (userId IS NULL OR userId = :userId) and i.synchronize == 1 ORDER BY i.date DESC, i.id DESC")

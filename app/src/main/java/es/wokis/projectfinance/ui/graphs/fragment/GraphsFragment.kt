@@ -13,6 +13,7 @@ import es.wokis.projectfinance.databinding.FragmentGraphsBinding
 import es.wokis.projectfinance.ui.base.BaseFragment
 import es.wokis.projectfinance.ui.graphs.adapter.GraphsTabAdapter
 import es.wokis.projectfinance.ui.graphs.viewmodel.GraphsViewModel
+import es.wokis.projectfinance.utils.applyEdgeToEdge
 import es.wokis.projectfinance.utils.getTintByContrast
 
 class GraphsFragment : BaseFragment() {
@@ -77,6 +78,11 @@ class GraphsFragment : BaseFragment() {
             graphsToolbarMainToolbar.setNavigationOnClickListener {
                 navigateBack()
             }
+            root.applyEdgeToEdge(
+                applyTopPadding = true,
+                applyLeftPadding = true,
+                applyRightPadding = true
+            )
         }
     }
 

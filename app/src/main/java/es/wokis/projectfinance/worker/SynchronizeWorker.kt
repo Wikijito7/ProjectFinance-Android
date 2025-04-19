@@ -3,6 +3,7 @@ package es.wokis.projectfinance.worker
 import android.app.NotificationChannel
 import android.app.NotificationManager
 import android.content.Context
+import android.content.pm.ServiceInfo.FOREGROUND_SERVICE_TYPE_DATA_SYNC
 import android.os.Build
 import androidx.annotation.RequiresApi
 import androidx.core.app.NotificationCompat
@@ -72,7 +73,11 @@ class SynchronizeWorker @AssistedInject constructor(
             .setChannelId(CHANNEL_ID)
             .build()
 
-        return ForegroundInfo(SYNC_WORKER_ID, notification)
+        return if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+            ForegroundInfo(SYNC_WORKER_ID, notification, FOREGROUND_SERVICE_TYPE_DATA_SYNC)
+        } else {
+            ForegroundInfo(SYNC_WORKER_ID, notification)
+        }
     }
 
     companion object {

@@ -16,6 +16,7 @@ import es.wokis.projectfinance.ui.base.BaseFragment
 import es.wokis.projectfinance.ui.filter.adapter.FilterTabAdapter
 import es.wokis.projectfinance.ui.filter.viewmodel.FilterViewModel
 import es.wokis.projectfinance.ui.home.fragment.HomeFragment
+import es.wokis.projectfinance.utils.applyEdgeToEdge
 import es.wokis.projectfinance.utils.asCurrency
 import es.wokis.projectfinance.utils.getLocale
 import es.wokis.projectfinance.utils.getTintByContrast
@@ -140,6 +141,11 @@ class FilterFragment : BaseFragment() {
             filterToolbarMainToolbar.setNavigationOnClickListener {
                 navigateBack()
             }
+            filterToolbarMainToolbar.applyEdgeToEdge(
+                applyTopPadding = true,
+                applyLeftPadding = true,
+                applyRightPadding = true
+            )
         }
     }
 
