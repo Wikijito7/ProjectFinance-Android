@@ -12,6 +12,9 @@ import javax.inject.Inject
 @HiltAndroidApp
 class MainApplication : Application(), Configuration.Provider {
 
+    override val workManagerConfiguration: Configuration
+        get() = Configuration.Builder().setWorkerFactory(workerFactory).build()
+
     @Inject
     lateinit var workerFactory: HiltWorkerFactory
 
@@ -20,9 +23,4 @@ class MainApplication : Application(), Configuration.Provider {
         DynamicColors.applyToActivitiesIfAvailable(this)
         EmojiManager.install(GoogleEmojiProvider())
     }
-
-    override fun getWorkManagerConfiguration() =
-        Configuration.Builder()
-            .setWorkerFactory(workerFactory)
-            .build()
 }

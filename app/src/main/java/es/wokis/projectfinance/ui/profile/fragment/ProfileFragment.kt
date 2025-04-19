@@ -119,7 +119,6 @@ class ProfileFragment : BaseFragment() {
         viewModel.getUserInfoLiveData().observe(viewLifecycleOwner) {
             when (it) {
                 is AsyncResult.Error -> {
-                    setLoading(false)
                     if (it.error is ErrorType.ServerError &&
                         it.error.httpCode == 401
                     ) {
@@ -128,12 +127,8 @@ class ProfileFragment : BaseFragment() {
                     }
 
                 }
-                is AsyncResult.Loading -> setLoading(
-                    true,
-                    getString(R.string.profile__getting_user_data)
-                )
+                is AsyncResult.Loading -> Unit
                 is AsyncResult.Success -> {
-                    setLoading(false)
                     setUpUserInfo(it.data)
                 }
             }

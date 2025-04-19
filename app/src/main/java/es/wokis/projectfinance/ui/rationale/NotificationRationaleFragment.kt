@@ -15,6 +15,7 @@ import es.wokis.projectfinance.R
 import es.wokis.projectfinance.databinding.FragmentNotificationRationaleBinding
 import es.wokis.projectfinance.ui.base.BaseFragment
 import es.wokis.projectfinance.ui.home.fragment.HomeFragmentDirections
+import es.wokis.projectfinance.utils.applyEdgeToEdge
 import es.wokis.projectfinance.utils.showSnackBar
 
 class NotificationRationaleFragment : BaseFragment() {
@@ -53,6 +54,16 @@ class NotificationRationaleFragment : BaseFragment() {
         binding = FragmentNotificationRationaleBinding.inflate(inflater, container, false)
         initializeListeners()
         return binding?.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        binding?.root?.applyEdgeToEdge(
+            applyTopPadding = true,
+            applyBottomPadding = true,
+            applyLeftPadding = true,
+            applyRightPadding = true
+        )
     }
 
     override fun onResume() {

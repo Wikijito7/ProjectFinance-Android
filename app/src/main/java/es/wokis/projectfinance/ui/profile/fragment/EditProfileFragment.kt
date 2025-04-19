@@ -168,7 +168,6 @@ class EditProfileFragment : BaseFragment() {
         viewModel.getUpdateUserLiveData().observe(viewLifecycleOwner) {
             when (it) {
                 is AsyncResult.Error -> {
-                    setLoading(false)
                     when (it.error) {
                         is ErrorType.TOTPRequiredError -> {
                             navigateTo(
@@ -189,12 +188,9 @@ class EditProfileFragment : BaseFragment() {
                     }
                 }
 
-                is AsyncResult.Loading -> {
-                    setLoading(true, getString(R.string.edit_profile__updating_user))
-                }
+                is AsyncResult.Loading -> Unit
 
                 is AsyncResult.Success -> {
-                    setLoading(false)
                     navigateBack()
                 }
             }
@@ -207,7 +203,6 @@ class EditProfileFragment : BaseFragment() {
         viewModel.getUploadImageLiveData().observe(viewLifecycleOwner) {
             when (it) {
                 is AsyncResult.Error -> {
-                    setLoading(false)
                     when (it.error) {
                         is ErrorType.TOTPRequiredError -> {
                             navigateTo(
@@ -226,15 +221,9 @@ class EditProfileFragment : BaseFragment() {
 
                 }
 
-                is AsyncResult.Loading -> {
-                    setLoading(
-                        true,
-                        getString(R.string.edit_profile__updating_profile_picture)
-                    )
-                }
+                is AsyncResult.Loading -> Unit
 
                 is AsyncResult.Success -> {
-                    setLoading(false)
                     viewModel.getUserInfo()
                 }
             }
@@ -245,7 +234,6 @@ class EditProfileFragment : BaseFragment() {
         viewModel.getUserInfoLiveData().observe(viewLifecycleOwner) {
             when (it) {
                 is AsyncResult.Error -> {
-                    setLoading(false)
                     if (it.error is ErrorType.ServerError &&
                         it.error.httpCode == 401
                     ) {
@@ -255,13 +243,9 @@ class EditProfileFragment : BaseFragment() {
 
                 }
 
-                is AsyncResult.Loading -> setLoading(
-                    true,
-                    getString(R.string.profile__getting_user_data)
-                )
+                is AsyncResult.Loading -> Unit
 
                 is AsyncResult.Success -> {
-                    setLoading(false)
                     setUpUserInfo(it.data)
                 }
             }

@@ -30,6 +30,7 @@ import es.wokis.projectfinance.ui.base.BaseFragment
 import es.wokis.projectfinance.ui.dashboard.adapter.DashboardTabAdapter
 import es.wokis.projectfinance.ui.dashboard.viewmodel.DashboardViewModel
 import es.wokis.projectfinance.ui.dashboard.vo.InvoiceVO
+import es.wokis.projectfinance.utils.applyEdgeToEdge
 import es.wokis.projectfinance.utils.asCurrency
 import es.wokis.projectfinance.utils.getCategoryName
 import es.wokis.projectfinance.utils.getLocale
@@ -42,6 +43,7 @@ import es.wokis.projectfinance.utils.showReinsertInvoiceSnackBar
 import es.wokis.projectfinance.utils.toDp
 import java.util.Locale
 import javax.inject.Inject
+import androidx.core.graphics.toColorInt
 
 @AndroidEntryPoint
 class DashboardFragment : BaseFragment() {
@@ -70,6 +72,7 @@ class DashboardFragment : BaseFragment() {
         viewModel.getInvoices()
         setUpViewPager()
         setUpObservers()
+        setUpTutorial()
     }
 
     override fun onResume() {
@@ -94,6 +97,15 @@ class DashboardFragment : BaseFragment() {
     override fun onDestroyView() {
         binding = null
         super.onDestroyView()
+    }
+
+    private fun setUpTutorial() {
+        binding?.dashboardIncludeTutorial?.root?.applyEdgeToEdge(
+            applyTopPadding = true,
+            applyBottomPadding = true,
+            applyLeftPadding = true,
+            applyRightPadding = true
+        )
     }
 
     private fun setUpMenu() {
@@ -177,9 +189,7 @@ class DashboardFragment : BaseFragment() {
     private fun checkSwipeTutorial(invoice: InvoiceVO) {
         val showSwipeTutorial = sharedPreferences.getBoolean(SHOW_SWIPE_TUTORIAL, true)
         val showReactionsTutorial = sharedPreferences.getBoolean(SHOW_REACTION_TUTORIAL, true)
-        if (showSwipeTutorial ||
-            showReactionsTutorial
-        ) {
+        if (showSwipeTutorial || showReactionsTutorial) {
             showTutorialWindow(invoice, showSwipeTutorial)
             sharedPreferences.edit {
                 putBoolean(SHOW_SWIPE_TUTORIAL, false)
@@ -317,14 +327,14 @@ class DashboardFragment : BaseFragment() {
             rowDashboardInvoiceLabelTitle.text = invoice.title
             rowDashboardInvoiceLabelDate.text = invoice.date
             rowDashboardInvoiceLabelCategory.text = context.getCategoryName(invoice.categoryName)
-            rowDashboardInvoiceImgCategory.drawable.setTint(Color.parseColor(invoice.categoryColor))
+            rowDashboardInvoiceImgCategory.drawable.setTint(invoice.categoryColor.toColorInt())
             rowDashboardInvoiceLabelInvoiceQuantity.text = invoice.quantity.asCurrency(locale)
         }
     }
 
     private fun setUpInvoiceIcon(invoice: InvoiceVO) {
         binding?.dashboardIncludeTutorial?.dashboardTutorialIncludeInvoice?.rowDashboardInvoiceImgInvoiceTypeIcon?.apply {
-            val categoryColor = Color.parseColor(invoice.categoryColor)
+            val categoryColor = invoice.categoryColor.toColorInt()
             setImageDrawable(
                 ResourcesCompat.getDrawable(
                     context.resources,
